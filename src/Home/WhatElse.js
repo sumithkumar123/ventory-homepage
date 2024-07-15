@@ -14,7 +14,7 @@ import { useEffect } from 'react';
 export default function WhatElse() {
   useEffect(() => {
     AOS.init({
-      duration: 2500, // Animation duration in milliseconds
+      duration: 1500, // Animation duration in milliseconds
       // Whether animation should happen only once
     });
   }, []);

@@ -1,5 +1,6 @@
+import React, { useState, useEffect } from 'react';
 import '../styles/Home/index.scss';
-import { VentoryLogo } from '../components'
+import { VentoryLogo } from '../components';
 import Carousel from './Carousel';
 import WhatsNew from './WhatsNew';
 import WhyVentory from './WhyVentory';
@@ -9,15 +10,35 @@ import CustomerApp from './CustomerApp';
 import WhatElse from './WhatElse';
 import Footer from './Footer';
 import TrustedPartners from './TrustedPartners';
+import LogoPlaceholder from './LogoPlaceholder';
+import withLazyLoad from './withLazyLoad';
+
+const LazyWhyVentory = withLazyLoad(WhyVentory);
+const LazyWhyChooseUs = withLazyLoad(WhyChooseUs);
+const LazyPartnersApp = withLazyLoad(PartnersApp);
+const LazyCustomerApp = withLazyLoad(CustomerApp);
+const LazyWhatElse = withLazyLoad(WhatElse);
+const LazyTrustedPartners = withLazyLoad(TrustedPartners);
 
 export default function Home() {
+  const [logoLoaded, setLogoLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLogoLoaded(true);
+    }, 2000); // 2 seconds delay
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="home">
       <nav className="nav-bar-container">
         <div className='nav-bar'>
-          <VentoryLogo />
-          <button className='su-btn'
-          ><p>Register</p></button>
+          {logoLoaded ? <VentoryLogo /> : <LogoPlaceholder />} {/* Conditional rendering */}
+          <button className='su-btn'>
+            <p>Register</p>
+          </button>
         </div>
       </nav>
 
@@ -34,26 +55,27 @@ export default function Home() {
       </div>
 
       <div className="home-container">
-        <WhyVentory />
+        <LazyWhyVentory />
       </div>
 
       <div className="home-container">
-        <WhyChooseUs />
+        <LazyWhyChooseUs />
       </div>
 
       <div className="home-container">
-        <PartnersApp />
+        <LazyPartnersApp />
       </div>
 
       <div className="home-container">
-        <CustomerApp />
+        <LazyCustomerApp />
       </div>
 
       <div className="home-container">
-        <WhatElse />
+        <LazyWhatElse />
       </div>
+      
       <div className="home-container">
-        <TrustedPartners />
+        <LazyTrustedPartners />
       </div>
 
       <div className="footer-container">

@@ -1,0 +1,238 @@
+// .our-partners {
+//   height: 200px;
+//   width: 100%;
+//   background-color: #ffffff;
+//   border-radius: 8px;
+//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//   text-align: center;
+
+//   .title {
+//     font-size: 35px;
+//     font-weight: bold;
+//     color: #333;
+//     padding: 20px;
+//     margin-bottom: 20px;
+//   }
+
+//   .partner-container {
+//     overflow: hidden;
+//     width: 100%;
+//   }
+
+//   .marquee {
+//     white-space: nowrap;
+//     animation: marquee 20s linear infinite;
+//   }
+
+//   .partner-logo {
+//     max-width: 100px;
+//     margin: 0 20px;
+//     vertical-align: middle;
+//   }
+// }
+
+// @keyframes marquee {
+//   from {transform: translateX(100%);}
+//   to {transform: translateX(-100%);}
+// }
+
+
+
+
+.our-partners {
+  height: 200px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  .title {
+    font-size: 35px;
+    font-weight: bold;
+    color: #333;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .partner-container {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .marquee {
+    white-space: nowrap;
+    animation: marquee 20s linear infinite;
+  }
+
+  .partner-logo {
+    max-width: 100px;
+    margin: 0 20px;
+    vertical-align: middle;
+  }
+}
+
+@keyframes marquee {
+  from {transform: translateX(100%);}
+  to {transform: translateX(-100%);}
+}
+
+.partners-app {
+  height: 600px;
+  width: 100%;
+  max-width: 1500px;
+  display: flex;
+  gap: 50px;
+
+  .partners-app-left {
+    height: 100%;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+
+    .head {
+      height: 80px;
+      width: 100%;
+
+      .title, .heading {
+        width: 100%;
+        font-weight: bold;
+      }
+
+      .title {
+        height: 60px;
+        font-size: 45px;
+        color: #3f4d74;
+        font-family: "Rubik Moonrocks", sans-serif;
+      }
+
+      .heading{
+        height: 20px;
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        color: #595959;
+        font-family: 'Roboto Condensed', sans-serif;
+      }
+    }
+
+    .description {
+      height: calc(100% - 80px);
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      p{
+        line-height: 1.6;
+        font-size: 25px;
+        color: rgba(0, 0, 0, 0.55);
+        font-family: 'Roboto Condensed', sans-serif;
+        text-align: justify;
+      }
+    }
+  }
+
+  .partners-app-right {
+    height: 100%;
+    width: 45%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img{
+      max-height: 100%;
+      max-width: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 600px) {
+  .partners-app {
+    height: unset;
+    flex-direction: column;
+    gap: 30px;
+    .partners-app-left {
+      height: unset;
+      width: 100%;
+      gap: 30px;
+      .head {
+        height: 65px;
+        .title {
+          height: 45px;
+          font-size: 35px;
+        }
+        .heading{
+          height: 20px;
+          font-size: 18px;
+        }
+      }
+      .description{
+        height: max-content;
+        p{font-size: 18px;}
+      }
+    }
+    .partners-app-right {
+      height: 250px;
+      width: 100%;
+      padding: unset;
+      align-items: flex-end;
+    }
+  }
+}
+
+/* iPads, Tablets */
+@media screen and (min-width: 601px) and (max-width: 768px) {
+  .partners-app {
+    height: unset;
+    flex-direction: column;
+    .partners-app-left {
+      height: unset;
+      width: 100%;
+      gap: 50px;
+      .description {
+        height: max-content;
+        p {font-size: 22px;}
+      }
+    }
+    .partners-app-right {
+      height: 300px;
+      width: 100%;
+      padding: unset;
+    }
+  }
+}
+
+/* Small screens, laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .partners-app {
+    gap: 30px;
+    .partners-app-left {
+      width: 50%;
+      .description p{font-size: 22px;}
+    }
+    .partners-app-right {
+      padding: unset;
+      width: 50%;
+    }
+  }
+}
+
+/* Large Devices (Desktops) */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  .partners-app {
+    gap: 40px;
+    .partners-app-left {
+      width: 50%;
+      .description p{font-size: 23px;}
+    }
+    .partners-app-right {width: 50%;}
+  }
+}

@@ -1,0 +1,175 @@
+.what-else {
+  height: 100%;
+  width: 100%;
+  max-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  .what-else-top{
+    height: 80px;
+    width: 100%;
+
+    .title, .heading {
+      width: 100%;
+      font-weight: bold;
+    }
+
+    .title {
+      height: 60px;
+      font-size: 45px;
+      color: #3f4d74;
+      font-family: "Rubik Moonrocks", sans-serif;
+    }
+
+    .heading{
+      height: 20px;
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+      color: #595959;
+      font-family: 'Roboto Condensed', sans-serif;
+    }
+  }
+
+  .what-else-bottom {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
+    .feature{
+      height: 50px;
+      width: max-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+
+      .icon-container{
+        height: 100%;
+        aspect-ratio: 1;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img{
+          height: 100%;
+          width: auto;
+          filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(55deg) brightness(102%) contrast(103%);
+        }
+      }
+
+      .description-container{
+        height: 100%;
+        width: max-content;
+        padding: 0 15px 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+          font-size: 20px;
+          color: white;
+          font-family: 'Roboto Condensed', sans-serif;
+        }
+      }
+    }
+  }
+}
+
+
+/* AOS Animations Enhancements */
+[data-aos='fade-right'] {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 1s, transform 1s;
+}
+
+[data-aos='fade-right'].aos-animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+[data-aos='zoom-in'] {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 1s, transform 1s;
+}
+
+[data-aos='zoom-in'].aos-animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* Mobile devices */
+@media screen and (max-width: 600px) {
+  .what-else {
+    gap: 30px;
+    .what-else-top{
+      height: 85px;
+      .title {
+        height: 45px;
+        font-size: 35px;
+      }
+      .heading{
+        height: 40px;
+        font-size: 18px;
+      }
+    }
+    .what-else-bottom {
+      justify-content: flex-start;
+      gap: 5px;
+      .feature {
+        height: 30px;
+        border-radius: 5px;
+        .icon-container {padding: 7px;}
+        .description-container{
+          padding: 0 10px 0 0;
+          p {font-size: 14px;}
+        }
+      }
+    }
+  }
+}
+
+/* iPads, Tablets */
+@media screen and (min-width: 601px) and (max-width: 768px) {
+  .what-else .what-else-bottom {
+    gap: 12.5px;
+    .feature {
+      height: 40px;
+      .icon-container {padding: 10px;}
+      .description-container{
+        padding: 0 10px 0 0;
+        p {font-size: 17px;}
+      }
+    }
+  }
+}
+
+/* Small screens, laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .what-else {
+    gap: 30px;
+    .what-else-bottom {
+      gap: 15px;
+      .feature {
+        height: 40px;
+        .icon-container {padding: 10px;}
+        .description-container{
+          padding: 0 10px 0 0;
+          p {font-size: 18px;}
+        }
+      }
+    }
+  }
+}
+
+/* Large Devices (Desktops) */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  .what-else {gap: 40px;}
+}

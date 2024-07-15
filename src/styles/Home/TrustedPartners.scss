@@ -1,0 +1,27 @@
+.image-scroller {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+  
+    &__content {
+      display: flex;
+      flex-direction: row;
+      animation: scroll 30s linear infinite;
+    }
+  
+    img {
+      height: 200px; 
+      margin-right: 10px; 
+      padding:20px;
+    }
+  
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+  }
+  
